@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2rem;
+}
+input[type="radio"] {
+    display: none;
+}
+section {
+    margin-top: 2rem;
+    display: none;
+    background-color: #ffffff79;
+    width: 100%;
+    padding: 10px;
+    animation: fadout 1s ease-in-out alternate;
+}
+section h3{
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: green;
+    font-style: italic;
+    border-bottom: 3px solid orange;
+}
+section p {
+    letter-spacing: 1px;
+    word-spacing: 6px;
+    line-height: 23px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-top: 5px;
+}
+.tab-buttons {
+    text-transform: uppercase;
+    margin-left: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+} 
+.tab-buttons label {
+    background-color: orange;
+    color: white;
+    padding: 5px 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#home:checked ~ .tab-buttons label[for="home"],
+#about:checked ~ .tab-buttons label[for="about"],
+#projects:checked ~ .tab-buttons label[for="projects"],
+#contact:checked ~ .tab-buttons label[for="contact"] {
+   border-bottom: 2px solid orange;
+   background-color: black;
+   transform: scale(1.1);
+}
+#home:checked ~ #home_section,
+#about:checked ~ #about_section,
+#projects:checked ~ #projects_section,
+#contact:checked ~ #contact_section {
+   display: block;
+}
+
+@keyframes fadout {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
